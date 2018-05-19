@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1.csproj",
+      "projectUniqueName": "C:\\Users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\Assignment-1--Csharp\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1.csproj",
       "projectName": "James_Grau_991443203_Assignment_1",
-      "projectPath": "c:\\users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1.csproj",
+      "projectPath": "C:\\Users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\Assignment-1--Csharp\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1.csproj",
       "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\James_Grau_991443203_Assignment_1\\obj\\",
+      "outputPath": "C:\\Users\\james\\source\\repos\\Assignments\\James_Grau_991443203_Assignment_1\\Assignment-1--Csharp\\James_Grau_991443203_Assignment_1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
