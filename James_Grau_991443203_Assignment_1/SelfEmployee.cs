@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace James_Grau_991443203_Assignment_1 {
     class SelfEmployee : Employee {
         private double hourlyRate { get; }
         private int totalHours { get; }
 
-        public SelfEmployee() : base() {}
+        public SelfEmployee() : base() { }
 
         public SelfEmployee(string id, string name, string profession, double hourlyRate, int totalHours) : base(id, name, profession) {
             this.id = id;
