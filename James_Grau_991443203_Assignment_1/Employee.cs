@@ -54,7 +54,7 @@ namespace James_Grau_991443203_Assignment_1 {
          **/
         public virtual string employeeInformation() {
             // Return a string with the employees information
-            return "Employee ID: " + id + "\nEmployee Name: " + name + "\nEmployee Profession: " + profession;
+            return string.Format("|{0,13}|{1,20}|{2,20}|", id, name, profession);
         }
     }
 }

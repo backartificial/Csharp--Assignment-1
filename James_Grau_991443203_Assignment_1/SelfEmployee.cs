@@ -1,17 +1,19 @@
-﻿/**
- * 
- * File: SelfEmployee.cs
- * Developer: James Grau
- * Date: May 20, 2018
- * 
- * Assignment: 1
- * Author: James Grau
- * Student Number: 991443203
- * Class: PROG 37721
- * 
- **/
+﻿
 
 // Project Namespace
+using System;
+/**
+* 
+* File: SelfEmployee.cs
+* Developer: James Grau
+* Date: May 20, 2018
+* 
+* Assignment: 1
+* Author: James Grau
+* Student Number: 991443203
+* Class: PROG 37721
+* 
+**/
 namespace James_Grau_991443203_Assignment_1 {
     /**
      * 
@@ -70,8 +72,12 @@ namespace James_Grau_991443203_Assignment_1 {
          * 
          **/
         public override string employeeInformation() {
+            // Format the hourly rate and calculated wage to display as currency
+            string hourlyRate = String.Format("{0:C2}", this.hourlyRate);
+            string calculatedWage = String.Format("{0:C2}", calculateWage());
+
             // Return the base classes information along with the concatenated hourly wage and total hours worked
-            return base.employeeInformation() + "\nHourly Rate: " + hourlyRate + "\nTotal Hours: " + totalHours;
+            return base.employeeInformation() + String.Format("{0,12}|{1,24}|{2,16}|", hourlyRate, totalHours, calculatedWage);
         }
     }
 }

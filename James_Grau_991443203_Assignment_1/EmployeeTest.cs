@@ -160,20 +160,25 @@ namespace James_Grau_991443203_Assignment_1 {
          **/
         private static void viewEmployee() {
             // Display the table header to the console
-            Console.WriteLine("--------------------------------------------------------------------------------------------------");
-            Console.WriteLine(String.Format("|{0,13}|{1,15}|{2,11}|{3,12}|{4,24}|{5,16}|", "Employee Id", "Employee Name", "Profession", "Hourly Rate", "Total Hours (Bi Weekly)", "Calculated Wage"));
-            Console.WriteLine("--------------------------------------------------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine(String.Format("|{0,13}|{1,20}|{2,20}|{3,12}|{4,24}|{5,16}|", "Employee Id", "Employee Name", "Profession", "Hourly Rate", "Total Hours (Bi Weekly)", "Calculated Wage"));
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
 
+            // Check if there is no Employees in the Employees list
             if (employees.Count == 0) {
-                Console.WriteLine(String.Format("|{0,96}|", "Oops... There are no Employees to display. Please add an Employee and chank back here!".PadRight(91)));
-                Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                // Display a message stating that the Employees list is empty
+                Console.WriteLine(String.Format("|{0,110}|", "Oops... There are no Employees to display. Please add an Employee and chank back here!".PadRight(98)));
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
             } else {
+                // Loop through each employee in the Employees list and print their data
                 foreach (SelfEmployee employee in employees) {
+                    // Write the Employees information to the console
                     Console.WriteLine(employee.employeeInformation());
-                    Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
                 }
             }
 
+            // Hold the console to display the Employees
             Console.ReadLine();
         }
     }
