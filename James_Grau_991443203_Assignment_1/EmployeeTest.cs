@@ -45,7 +45,7 @@ namespace James_Grau_991443203_Assignment_1 {
                 switch (option) {
                     // Perform action for menu option 1 (menu)
                     case 1:
-                        // Clear console
+                        // Clean the console
                         Console.Clear();
 
                         // Set the Console title
@@ -75,11 +75,14 @@ namespace James_Grau_991443203_Assignment_1 {
 
                     // Perform action for invalid menu option
                     default:
+                        // Cleare the console
+                        Console.Clear();
+
                         // Display a message stating that the entered menu option is not a valid option (1-3[4])
                         Console.WriteLine("\nOops... That is an invalid menu selection.  Please Try again.\n\n");
 
-                        // Set the menu option to 1 (menu) to stop from looping
-                        option = 1;
+                        // Call the displayMenu Method
+                        displayMenu();
                     break;
                 }
 
@@ -105,7 +108,7 @@ namespace James_Grau_991443203_Assignment_1 {
             
             // Propt the user to enter their menu option
             Console.Write("Option: ");
-            option = int.Parse(Console.ReadLine()); // Store the option in to the options variable
+            int.TryParse(Console.ReadLine(), out option); // Store the option in to the options variable
         }
 
         /**
