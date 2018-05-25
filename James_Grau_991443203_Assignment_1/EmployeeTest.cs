@@ -47,7 +47,10 @@ namespace James_Grau_991443203_Assignment_1 {
                     case 1:
                         // Clear console
                         Console.Clear();
-                        
+
+                        // Set the Console title
+                        Console.Title = programTitle;
+
                         // Call the displayMenu Method
                         displayMenu();
                     break;
@@ -112,7 +115,7 @@ namespace James_Grau_991443203_Assignment_1 {
          **/
         private static void addEmployee() {
             // Initialize the needed method variables
-            string id, name, profession;
+            string id, name, profession, repeat;
             double hourlyRate;
             int totalHours;
 
@@ -151,6 +154,26 @@ namespace James_Grau_991443203_Assignment_1 {
 
             // Take the added information (stored in the variables) and pass them along to create a new SelfEmployee instance and then sore it into the employees List
             employees.Add(new SelfEmployee(id, name, profession, hourlyRate, totalHours));
+
+            // Ask the user if they want to enter another user
+            Console.Write("Would you like to add another Employee? Yes (y/Y) or No (n/N): ");
+            repeat = Console.ReadLine();
+
+            // Loop if the input is not Y/N
+            while ((repeat.ToUpper() != "Y") && (repeat.ToUpper() != "N")) {
+                Console.WriteLine("Oops... That is an invalid option.  Please try again.");
+
+                // Ask the user if they want to enter another user
+                Console.Write("Would you like to add another Employee? Yes (y/Y) or No (n/N): ");
+                repeat = Console.ReadLine();
+            }
+
+            // If the users wants to repeat adding another imployee then call this fucntion again
+            if(repeat.ToUpper() == "Y") {
+                // Call the add employee function again
+                addEmployee();
+            }
+
         }
 
         /**
@@ -159,6 +182,10 @@ namespace James_Grau_991443203_Assignment_1 {
          * 
          **/
         private static void viewEmployee() {
+            // Clear the console (for a fresh look) and change the title to reflect the current fucntion of the program
+            Console.Clear();
+            Console.Title = "View Employee(s) | " + programTitle;
+
             // Display the table header to the console
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
             Console.WriteLine(String.Format("|{0,13}|{1,20}|{2,20}|{3,12}|{4,24}|{5,16}|", "Employee Id", "Employee Name", "Profession", "Hourly Rate", "Total Hours (Bi Weekly)", "Calculated Wage"));
@@ -177,6 +204,9 @@ namespace James_Grau_991443203_Assignment_1 {
                     Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
                 }
             }
+
+            // Display a message stating that the user needs to press the enter key to return back to the main menu
+            Console.WriteLine("\n\nPress the 'Enter' key to return to the main level.");
 
             // Hold the console to display the Employees
             Console.ReadLine();
