@@ -134,26 +134,109 @@ namespace James_Grau_991443203_Assignment_1 {
              * Start prompting the user to enter Employee information by asking the needed fields followed by store the entered data into its respective variables
              * 
              **/
-             // Ask user for Employee ID
+            // Ask user for Employee ID
             Console.Write("Please enter Employee ID: ");
             id = Console.ReadLine();
+
+            // Check to make sure that the id will be able to fit into the table
+            while (id.Length > 13) {
+                // Diaplay an error message in red text
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Oops... The length of the Employee Id is to long.  It must be up to 13 characters long.  Please try again.");
+                Console.ResetColor(); // Reset console color
+
+                // Ask user for Employee ID
+                Console.Write("Please enter Employee ID: ");
+                id = Console.ReadLine();
+            }
 
             // Ask user for Employee Name
             Console.Write("Please enter Employee Name: ");
             name = Console.ReadLine();
 
+            // Check to make sure that the name will be able to fit into the table
+            while (name.Length > 20) {
+                // Diaplay an error message in red text
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Oops... The length of the Employee Name is to long.  It must be up to 20 characters long.  Please try again.");
+                Console.ResetColor(); // Reset console color
+
+                // Ask user for Employee Name
+                Console.Write("Please enter Employee Name: ");
+                name = Console.ReadLine();
+            }
+
             // Ask the user for Employee Profession
             Console.Write("Please enter Employee Profession: ");
             profession = Console.ReadLine();
 
+            // Check to make sure that the profession will be able to fit into the table
+            while (profession.Length > 20) {
+                // Diaplay an error message in red text
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Oops... The length of the Employee Profession is to long.  It must be up to 20 characters long.  Please try again.");
+                Console.ResetColor(); // Reset console color
+
+                // Ask user for Employee Profession
+                Console.Write("Please enter Employee Profession: ");
+                profession = Console.ReadLine();
+            }
+
             // Ask the user for Employee Hourly Rate
             Console.Write("Please enter Hourly Rate: ");
-            hourlyRate = double.Parse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out hourlyRate);
 
+            // Check to see if the right value was entered and that the length is not greater then 12
+            while(hourlyRate == 0 || hourlyRate.ToString().Length > 6) {
+                // Check which loop iteration to perform
+                if(hourlyRate.ToString().Length > 6) {
+                    // Diaplay an error message in red text
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Oops... The length of the Hourly Rate is to long.  It must be up to 6 characters long.  Please try again.");
+                    Console.ResetColor(); // Reset console color
 
-            // ASk the user for Employee total hours
+                    // Ask the user for Employee Hourly Rate
+                    Console.Write("Please enter Hourly Rate: ");
+                    double.TryParse(Console.ReadLine(), out hourlyRate);
+                } else {
+                    // Diaplay an error message in red text
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Oops... That is an invalid value for Hourly Rate.  Please enter a proper value.");
+                    Console.ResetColor(); // Reset console color
+
+                    // Ask the user for Employee Hourly Rate
+                    Console.Write("Please enter Hourly Rate: ");
+                    double.TryParse(Console.ReadLine(), out hourlyRate);
+                }
+            }
+
+            // Ask the user for Employee total hours
             Console.Write("Please enter Total Hours: ");
-            totalHours = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out totalHours);
+
+            // Check to see if the right value was entered
+            while (totalHours == 0 || totalHours.ToString().Length > 24) {
+                // Check which loop iteration to perform
+                if (totalHours.ToString().Length > 24) {
+                    // Diaplay an error message in red text
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Oops... The length of the Total Hours is to long.  It must be up to 24 characters long.  Please try again.");
+                    Console.ResetColor(); // Reset console color
+
+                    // Ask the user for Employee total hours
+                    Console.Write("Please enter Total Hours: ");
+                    int.TryParse(Console.ReadLine(), out totalHours);
+                } else {
+                    // Diaplay an error message in red
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Oops... That is an invalid value for total hours.  Please enter a proper value.");
+                    Console.ResetColor(); // Reset console color
+
+                    // Ask the user for Employee total hours
+                    Console.Write("Please enter Total Hours: ");
+                    int.TryParse(Console.ReadLine(), out totalHours);
+                }
+            }
 
             // Take the added information (stored in the variables) and pass them along to create a new SelfEmployee instance and then sore it into the employees List
             employees.Add(new SelfEmployee(id, name, profession, hourlyRate, totalHours));
@@ -164,7 +247,10 @@ namespace James_Grau_991443203_Assignment_1 {
 
             // Loop if the input is not Y/N
             while ((repeat.ToUpper() != "Y") && (repeat.ToUpper() != "N")) {
+                // Display an error message in red
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Oops... That is an invalid option.  Please try again.");
+                Console.ResetColor(); // Reset console color
 
                 // Ask the user if they want to enter another user
                 Console.Write("Would you like to add another Employee? Yes (y/Y) or No (n/N): ");
