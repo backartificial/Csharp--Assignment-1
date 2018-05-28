@@ -78,8 +78,10 @@ namespace James_Grau_991443203_Assignment_1 {
                         // Cleare the console
                         Console.Clear();
 
-                        // Display a message stating that the entered menu option is not a valid option (1-3[4])
-                        Console.WriteLine("\nOops... That is an invalid menu selection.  Please Try again.\n\n");
+                        // Diaplay an error message in red text
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nOops... That is an invalid menu selection.  Please Try again.\n\n"); // Display a message stating that the entered menu option is not a valid option (1-3[4])
+                        Console.ResetColor(); // Reset console color
 
                         // Call the displayMenu Method
                         displayMenu();
